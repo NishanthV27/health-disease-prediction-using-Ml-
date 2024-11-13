@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>RiskAssess | Login</title>
+
+    <!-- Internal CSS -->
+    <style>
+        /* General Styling */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f7fa;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+
+        .login-container {
+            background-color: white;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            padding: 40px;
+            width: 300px;
+            text-align: center;
+        }
+
+        .login-title {
+            font-size: 32px;
+            font-weight: bold;
+            color: #333;
+        }
+
+        .login-subtitle {
+            color: #555;
+            margin-bottom: 20px;
+        }
+
+        .input-group {
+            margin-bottom: 20px;
+            text-align: left;
+        }
+
+        .input-group label {
+            font-size: 14px;
+            color: #555;
+            display: block;
+            margin-bottom: 5px;
+        }
+
+        .input-group input {
+            width: 100%;
+            padding: 10px;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+            font-size: 14px;
+        }
+
+        .input-group input:focus {
+            border-color: #0056b3;
+            outline: none;
+        }
+
+        .login-btn {
+            width: 100%;
+            padding: 10px;
+            background-color: #0056b3;
+            border: none;
+            color: white;
+            font-size: 16px;
+            border-radius: 4px;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+
+        .login-btn:hover {
+            background-color: #004494;
+        }
+
+        .signup-link, .back-home {
+            font-size: 14px;
+            margin-top: 10px;
+        }
+
+        .signup-link a, .back-home a {
+            color: #0056b3;
+            text-decoration: none;
+        }
+
+        .signup-link a:hover, .back-home a:hover {
+            text-decoration: underline;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="login-container">
+        <h1 class="login-title">RiskAssess</h1>
+        <p class="login-subtitle">Account Login</p>
+
+        <form id="loginForm">
+            <div class="input-group">
+                <label for="username">Username</label>
+                <input type="text" id="username" name="username" placeholder="Enter your username" required>
+            </div>
+
+            <div class="input-group">
+                <label for="password">Password</label>
+                <input type="password" id="password" name="password" placeholder="Enter your password" required>
+            </div>
+
+            <div class="input-group">
+                <label>
+                    <input type="checkbox" id="remember" name="remember"> Remember me
+                </label>
+            </div>
+
+            <button type="button" class="login-btn" onclick="location.href='index.html'">Login</button>
+
+
+
+          
+
+            <p class="signup-link">
+                Don't have an account? <a href="/signup.html">Sign Up</a>
+            </p>
+
+            <p class="back-home">
+                <a href="index.html">Back Home</a>
+            </p>
+        </form>
+    </div>
+
+    <!-- Internal JavaScript -->
+    <script>
+        document.getElementById("loginForm").addEventListener("submit", function (event) {
+            event.preventDefault();
+
+            // Get form values
+            const username = document.getElementById("username").value;
+            const password = document.getElementById("password").value;
+            const remember = document.getElementById("remember").checked;
+
+            // Validate the form (this can be enhanced with more checks)
+            if (username === "" || password === "") {
+                alert("Please fill in both fields.");
+                return;
+            }
+
+            // For now, just log the form data to the console (you can replace this with your actual login logic)
+            console.log("Username: " + username);
+            console.log("Password: " + password);
+            console.log("Remember me: " + remember);
+
+            // Redirect to dashboard (this can be replaced with actual backend authentication)
+            alert("Login successful!");
+            window.location.href = "/dashboard"; // Replace with actual redirect
+        });
+    </script>
+</body>
+</html>

@@ -1,0 +1,6 @@
+Number of Pregnancies,Glucose Level (mg/dL),Blood Pressure (mmHg),Skin Thickness (mm),Insulin Level (IU/mL),Body Mass Index (kg/m²),Diabetes Pedigree Function,Patient Age in Years,Diabetes Prediction Result,flag,username,timestamp
+1,1,1,1,2,16,8,40,"An error occurred: X has 8 features, but SVC is expecting 9 features as input.",,,2024-11-11 09:47:24.642186
+1,1,1,1,2,16,8,40,"An error occurred: X has 8 features, but SVC is expecting 9 features as input.",,,2024-11-11 09:47:26.454474
+1,70,123,33,0,24.5,0.56,56,No Diabetes,,,2024-11-11 16:04:20.356247
+1,70,123,33,0,24.5,0.56,56,No Diabetes,,,2024-11-11 16:04:23.170950
+17.99,10.38,100,100,0.118,50,50,50,56,50,50,50,0.88,50,50,50,50,50,50,50,50,50,57.8,50,50,50,50,50,50,50,Malignant,,,2024-11-13 15:25:18.010994

@@ -1,0 +1,39 @@
+import pandas as pd
+import pickle
+from sklearn.model_selection import train_test_split
+from sklearn.tree import DecisionTreeClassifier
+from sklearn.metrics import accuracy_score
+
+# Load your dataset
+filename = 'C:\Users\H P\OneDrive\Desktop\hackathon projects\diabetes.csv'  # Replace with your dataset path
+df = pd.read_csv(filename)
+
+# Fill missing values
+df['Glucose'] = df['Glucose'].fillna(df['Glucose'].mean())
+df['BloodPressure'] = df['BloodPressure'].fillna(df['BloodPressure'].mean())
+df['SkinThickness'] = df['SkinThickness'].fillna(df['SkinThickness'].median())
+df['Insulin'] = df['Insulin'].fillna(df['Insulin'].median())
+df['BMI'] = df['BMI'].fillna(df['BMI'].median())
+
+# Define features and target
+X = df.drop('Outcome', axis=1)
+y = df['Outcome']
+
+# Split the data into training and testing sets
+X_train, X_test, y_train, y_test = train_test_split(X, y, test_size=0.3, random_state=42)
+
+# Train the model
+classifier = DecisionTreeClassifier()
+classifier.fit(X_train, y_train)
+
+# Test the model
+y_pred = classifier.predict(X_test)
+accuracy = accuracy_score(y_test, y_pred)
+print(f"Model Accuracy: {accuracy * 100:.2f}%")
+
+# Save the model using pickle
+model_filename = 'retrain_model.pkl'
+with open(model_filename, 'wb') as model_file:
+    pickle.dump(classifier, model_file)
+
+print("Model retrained and saved successfully.")
